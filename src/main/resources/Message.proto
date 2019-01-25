@@ -1,0 +1,12 @@
+syntax = "proto2";
+package com.godme.protobuf;
+
+option java_package = "com.godme.protobuf";
+option java_outer_classname = "Message";
+option optimize_for = SPEED;
+
+message Cat{
+    optional string name = 1;
+    optional string color = 2;
+    optional string gender = 3;
+}

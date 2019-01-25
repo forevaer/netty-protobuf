@@ -14,6 +14,1351 @@ public final class Message {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface AnimalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.godme.protobuf.Animal)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+     */
+    boolean hasAnimalType();
+    /**
+     * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+     */
+    com.godme.protobuf.Message.Animal.Animal_type getAnimalType();
+
+    /**
+     * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+     */
+    boolean hasCat();
+    /**
+     * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+     */
+    com.godme.protobuf.Message.Cat getCat();
+    /**
+     * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+     */
+    com.godme.protobuf.Message.CatOrBuilder getCatOrBuilder();
+
+    /**
+     * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+     */
+    boolean hasDog();
+    /**
+     * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+     */
+    com.godme.protobuf.Message.Dog getDog();
+    /**
+     * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+     */
+    com.godme.protobuf.Message.DogOrBuilder getDogOrBuilder();
+
+    /**
+     * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+     */
+    boolean hasPig();
+    /**
+     * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+     */
+    com.godme.protobuf.Message.Pig getPig();
+    /**
+     * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+     */
+    com.godme.protobuf.Message.PigOrBuilder getPigOrBuilder();
+
+    public com.godme.protobuf.Message.Animal.DataBodyCase getDataBodyCase();
+  }
+  /**
+   * Protobuf type {@code com.godme.protobuf.Animal}
+   */
+  public  static final class Animal extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.godme.protobuf.Animal)
+      AnimalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Animal.newBuilder() to construct.
+    private Animal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Animal() {
+      animalType_ = 1;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Animal(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              com.godme.protobuf.Message.Animal.Animal_type value = com.godme.protobuf.Message.Animal.Animal_type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                animalType_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              com.godme.protobuf.Message.Cat.Builder subBuilder = null;
+              if (dataBodyCase_ == 2) {
+                subBuilder = ((com.godme.protobuf.Message.Cat) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.godme.protobuf.Message.Cat.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.godme.protobuf.Message.Cat) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 2;
+              break;
+            }
+            case 26: {
+              com.godme.protobuf.Message.Dog.Builder subBuilder = null;
+              if (dataBodyCase_ == 3) {
+                subBuilder = ((com.godme.protobuf.Message.Dog) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.godme.protobuf.Message.Dog.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.godme.protobuf.Message.Dog) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 3;
+              break;
+            }
+            case 34: {
+              com.godme.protobuf.Message.Pig.Builder subBuilder = null;
+              if (dataBodyCase_ == 4) {
+                subBuilder = ((com.godme.protobuf.Message.Pig) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.godme.protobuf.Message.Pig.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.godme.protobuf.Message.Pig) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 4;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Animal_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Animal_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.godme.protobuf.Message.Animal.class, com.godme.protobuf.Message.Animal.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code com.godme.protobuf.Animal.Animal_type}
+     */
+    public enum Animal_type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>DOG = 1;</code>
+       */
+      DOG(1),
+      /**
+       * <code>CAT = 2;</code>
+       */
+      CAT(2),
+      /**
+       * <code>PIG = 3;</code>
+       */
+      PIG(3),
+      ;
+
+      /**
+       * <code>DOG = 1;</code>
+       */
+      public static final int DOG_VALUE = 1;
+      /**
+       * <code>CAT = 2;</code>
+       */
+      public static final int CAT_VALUE = 2;
+      /**
+       * <code>PIG = 3;</code>
+       */
+      public static final int PIG_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Animal_type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Animal_type forNumber(int value) {
+        switch (value) {
+          case 1: return DOG;
+          case 2: return CAT;
+          case 3: return PIG;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Animal_type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Animal_type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Animal_type>() {
+              public Animal_type findValueByNumber(int number) {
+                return Animal_type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.godme.protobuf.Message.Animal.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Animal_type[] VALUES = values();
+
+      public static Animal_type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Animal_type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.godme.protobuf.Animal.Animal_type)
+    }
+
+    private int bitField0_;
+    private int dataBodyCase_ = 0;
+    private java.lang.Object dataBody_;
+    public enum DataBodyCase
+        implements com.google.protobuf.Internal.EnumLite {
+      CAT(2),
+      DOG(3),
+      PIG(4),
+      DATABODY_NOT_SET(0);
+      private final int value;
+      private DataBodyCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataBodyCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataBodyCase forNumber(int value) {
+        switch (value) {
+          case 2: return CAT;
+          case 3: return DOG;
+          case 4: return PIG;
+          case 0: return DATABODY_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataBodyCase
+    getDataBodyCase() {
+      return DataBodyCase.forNumber(
+          dataBodyCase_);
+    }
+
+    public static final int ANIMAL_TYPE_FIELD_NUMBER = 1;
+    private int animalType_;
+    /**
+     * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+     */
+    public boolean hasAnimalType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+     */
+    public com.godme.protobuf.Message.Animal.Animal_type getAnimalType() {
+      @SuppressWarnings("deprecation")
+      com.godme.protobuf.Message.Animal.Animal_type result = com.godme.protobuf.Message.Animal.Animal_type.valueOf(animalType_);
+      return result == null ? com.godme.protobuf.Message.Animal.Animal_type.DOG : result;
+    }
+
+    public static final int CAT_FIELD_NUMBER = 2;
+    /**
+     * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+     */
+    public boolean hasCat() {
+      return dataBodyCase_ == 2;
+    }
+    /**
+     * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+     */
+    public com.godme.protobuf.Message.Cat getCat() {
+      if (dataBodyCase_ == 2) {
+         return (com.godme.protobuf.Message.Cat) dataBody_;
+      }
+      return com.godme.protobuf.Message.Cat.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+     */
+    public com.godme.protobuf.Message.CatOrBuilder getCatOrBuilder() {
+      if (dataBodyCase_ == 2) {
+         return (com.godme.protobuf.Message.Cat) dataBody_;
+      }
+      return com.godme.protobuf.Message.Cat.getDefaultInstance();
+    }
+
+    public static final int DOG_FIELD_NUMBER = 3;
+    /**
+     * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+     */
+    public boolean hasDog() {
+      return dataBodyCase_ == 3;
+    }
+    /**
+     * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+     */
+    public com.godme.protobuf.Message.Dog getDog() {
+      if (dataBodyCase_ == 3) {
+         return (com.godme.protobuf.Message.Dog) dataBody_;
+      }
+      return com.godme.protobuf.Message.Dog.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+     */
+    public com.godme.protobuf.Message.DogOrBuilder getDogOrBuilder() {
+      if (dataBodyCase_ == 3) {
+         return (com.godme.protobuf.Message.Dog) dataBody_;
+      }
+      return com.godme.protobuf.Message.Dog.getDefaultInstance();
+    }
+
+    public static final int PIG_FIELD_NUMBER = 4;
+    /**
+     * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+     */
+    public boolean hasPig() {
+      return dataBodyCase_ == 4;
+    }
+    /**
+     * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+     */
+    public com.godme.protobuf.Message.Pig getPig() {
+      if (dataBodyCase_ == 4) {
+         return (com.godme.protobuf.Message.Pig) dataBody_;
+      }
+      return com.godme.protobuf.Message.Pig.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+     */
+    public com.godme.protobuf.Message.PigOrBuilder getPigOrBuilder() {
+      if (dataBodyCase_ == 4) {
+         return (com.godme.protobuf.Message.Pig) dataBody_;
+      }
+      return com.godme.protobuf.Message.Pig.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasAnimalType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, animalType_);
+      }
+      if (dataBodyCase_ == 2) {
+        output.writeMessage(2, (com.godme.protobuf.Message.Cat) dataBody_);
+      }
+      if (dataBodyCase_ == 3) {
+        output.writeMessage(3, (com.godme.protobuf.Message.Dog) dataBody_);
+      }
+      if (dataBodyCase_ == 4) {
+        output.writeMessage(4, (com.godme.protobuf.Message.Pig) dataBody_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, animalType_);
+      }
+      if (dataBodyCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.godme.protobuf.Message.Cat) dataBody_);
+      }
+      if (dataBodyCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (com.godme.protobuf.Message.Dog) dataBody_);
+      }
+      if (dataBodyCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (com.godme.protobuf.Message.Pig) dataBody_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.godme.protobuf.Message.Animal)) {
+        return super.equals(obj);
+      }
+      com.godme.protobuf.Message.Animal other = (com.godme.protobuf.Message.Animal) obj;
+
+      boolean result = true;
+      result = result && (hasAnimalType() == other.hasAnimalType());
+      if (hasAnimalType()) {
+        result = result && animalType_ == other.animalType_;
+      }
+      result = result && getDataBodyCase().equals(
+          other.getDataBodyCase());
+      if (!result) return false;
+      switch (dataBodyCase_) {
+        case 2:
+          result = result && getCat()
+              .equals(other.getCat());
+          break;
+        case 3:
+          result = result && getDog()
+              .equals(other.getDog());
+          break;
+        case 4:
+          result = result && getPig()
+              .equals(other.getPig());
+          break;
+        case 0:
+        default:
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAnimalType()) {
+        hash = (37 * hash) + ANIMAL_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + animalType_;
+      }
+      switch (dataBodyCase_) {
+        case 2:
+          hash = (37 * hash) + CAT_FIELD_NUMBER;
+          hash = (53 * hash) + getCat().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + DOG_FIELD_NUMBER;
+          hash = (53 * hash) + getDog().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + PIG_FIELD_NUMBER;
+          hash = (53 * hash) + getPig().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Animal parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Animal parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Animal parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.godme.protobuf.Message.Animal prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.godme.protobuf.Animal}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.godme.protobuf.Animal)
+        com.godme.protobuf.Message.AnimalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Animal_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Animal_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.godme.protobuf.Message.Animal.class, com.godme.protobuf.Message.Animal.Builder.class);
+      }
+
+      // Construct using com.godme.protobuf.Message.Animal.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        animalType_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataBodyCase_ = 0;
+        dataBody_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Animal_descriptor;
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Animal getDefaultInstanceForType() {
+        return com.godme.protobuf.Message.Animal.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Animal build() {
+        com.godme.protobuf.Message.Animal result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Animal buildPartial() {
+        com.godme.protobuf.Message.Animal result = new com.godme.protobuf.Message.Animal(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.animalType_ = animalType_;
+        if (dataBodyCase_ == 2) {
+          if (catBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = catBuilder_.build();
+          }
+        }
+        if (dataBodyCase_ == 3) {
+          if (dogBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = dogBuilder_.build();
+          }
+        }
+        if (dataBodyCase_ == 4) {
+          if (pigBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = pigBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.dataBodyCase_ = dataBodyCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.godme.protobuf.Message.Animal) {
+          return mergeFrom((com.godme.protobuf.Message.Animal)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.godme.protobuf.Message.Animal other) {
+        if (other == com.godme.protobuf.Message.Animal.getDefaultInstance()) return this;
+        if (other.hasAnimalType()) {
+          setAnimalType(other.getAnimalType());
+        }
+        switch (other.getDataBodyCase()) {
+          case CAT: {
+            mergeCat(other.getCat());
+            break;
+          }
+          case DOG: {
+            mergeDog(other.getDog());
+            break;
+          }
+          case PIG: {
+            mergePig(other.getPig());
+            break;
+          }
+          case DATABODY_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasAnimalType()) {
+          return false;
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.godme.protobuf.Message.Animal parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.godme.protobuf.Message.Animal) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataBodyCase_ = 0;
+      private java.lang.Object dataBody_;
+      public DataBodyCase
+          getDataBodyCase() {
+        return DataBodyCase.forNumber(
+            dataBodyCase_);
+      }
+
+      public Builder clearDataBody() {
+        dataBodyCase_ = 0;
+        dataBody_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int animalType_ = 1;
+      /**
+       * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+       */
+      public boolean hasAnimalType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+       */
+      public com.godme.protobuf.Message.Animal.Animal_type getAnimalType() {
+        @SuppressWarnings("deprecation")
+        com.godme.protobuf.Message.Animal.Animal_type result = com.godme.protobuf.Message.Animal.Animal_type.valueOf(animalType_);
+        return result == null ? com.godme.protobuf.Message.Animal.Animal_type.DOG : result;
+      }
+      /**
+       * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+       */
+      public Builder setAnimalType(com.godme.protobuf.Message.Animal.Animal_type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        animalType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .com.godme.protobuf.Animal.Animal_type animal_type = 1;</code>
+       */
+      public Builder clearAnimalType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        animalType_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.godme.protobuf.Message.Cat, com.godme.protobuf.Message.Cat.Builder, com.godme.protobuf.Message.CatOrBuilder> catBuilder_;
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public boolean hasCat() {
+        return dataBodyCase_ == 2;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public com.godme.protobuf.Message.Cat getCat() {
+        if (catBuilder_ == null) {
+          if (dataBodyCase_ == 2) {
+            return (com.godme.protobuf.Message.Cat) dataBody_;
+          }
+          return com.godme.protobuf.Message.Cat.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 2) {
+            return catBuilder_.getMessage();
+          }
+          return com.godme.protobuf.Message.Cat.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public Builder setCat(com.godme.protobuf.Message.Cat value) {
+        if (catBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          catBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public Builder setCat(
+          com.godme.protobuf.Message.Cat.Builder builderForValue) {
+        if (catBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          catBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public Builder mergeCat(com.godme.protobuf.Message.Cat value) {
+        if (catBuilder_ == null) {
+          if (dataBodyCase_ == 2 &&
+              dataBody_ != com.godme.protobuf.Message.Cat.getDefaultInstance()) {
+            dataBody_ = com.godme.protobuf.Message.Cat.newBuilder((com.godme.protobuf.Message.Cat) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 2) {
+            catBuilder_.mergeFrom(value);
+          }
+          catBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public Builder clearCat() {
+        if (catBuilder_ == null) {
+          if (dataBodyCase_ == 2) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 2) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          catBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public com.godme.protobuf.Message.Cat.Builder getCatBuilder() {
+        return getCatFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      public com.godme.protobuf.Message.CatOrBuilder getCatOrBuilder() {
+        if ((dataBodyCase_ == 2) && (catBuilder_ != null)) {
+          return catBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 2) {
+            return (com.godme.protobuf.Message.Cat) dataBody_;
+          }
+          return com.godme.protobuf.Message.Cat.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Cat cat = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.godme.protobuf.Message.Cat, com.godme.protobuf.Message.Cat.Builder, com.godme.protobuf.Message.CatOrBuilder> 
+          getCatFieldBuilder() {
+        if (catBuilder_ == null) {
+          if (!(dataBodyCase_ == 2)) {
+            dataBody_ = com.godme.protobuf.Message.Cat.getDefaultInstance();
+          }
+          catBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.godme.protobuf.Message.Cat, com.godme.protobuf.Message.Cat.Builder, com.godme.protobuf.Message.CatOrBuilder>(
+                  (com.godme.protobuf.Message.Cat) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 2;
+        onChanged();;
+        return catBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.godme.protobuf.Message.Dog, com.godme.protobuf.Message.Dog.Builder, com.godme.protobuf.Message.DogOrBuilder> dogBuilder_;
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public boolean hasDog() {
+        return dataBodyCase_ == 3;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public com.godme.protobuf.Message.Dog getDog() {
+        if (dogBuilder_ == null) {
+          if (dataBodyCase_ == 3) {
+            return (com.godme.protobuf.Message.Dog) dataBody_;
+          }
+          return com.godme.protobuf.Message.Dog.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 3) {
+            return dogBuilder_.getMessage();
+          }
+          return com.godme.protobuf.Message.Dog.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public Builder setDog(com.godme.protobuf.Message.Dog value) {
+        if (dogBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          dogBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public Builder setDog(
+          com.godme.protobuf.Message.Dog.Builder builderForValue) {
+        if (dogBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          dogBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public Builder mergeDog(com.godme.protobuf.Message.Dog value) {
+        if (dogBuilder_ == null) {
+          if (dataBodyCase_ == 3 &&
+              dataBody_ != com.godme.protobuf.Message.Dog.getDefaultInstance()) {
+            dataBody_ = com.godme.protobuf.Message.Dog.newBuilder((com.godme.protobuf.Message.Dog) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 3) {
+            dogBuilder_.mergeFrom(value);
+          }
+          dogBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public Builder clearDog() {
+        if (dogBuilder_ == null) {
+          if (dataBodyCase_ == 3) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 3) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          dogBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public com.godme.protobuf.Message.Dog.Builder getDogBuilder() {
+        return getDogFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      public com.godme.protobuf.Message.DogOrBuilder getDogOrBuilder() {
+        if ((dataBodyCase_ == 3) && (dogBuilder_ != null)) {
+          return dogBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 3) {
+            return (com.godme.protobuf.Message.Dog) dataBody_;
+          }
+          return com.godme.protobuf.Message.Dog.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Dog dog = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.godme.protobuf.Message.Dog, com.godme.protobuf.Message.Dog.Builder, com.godme.protobuf.Message.DogOrBuilder> 
+          getDogFieldBuilder() {
+        if (dogBuilder_ == null) {
+          if (!(dataBodyCase_ == 3)) {
+            dataBody_ = com.godme.protobuf.Message.Dog.getDefaultInstance();
+          }
+          dogBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.godme.protobuf.Message.Dog, com.godme.protobuf.Message.Dog.Builder, com.godme.protobuf.Message.DogOrBuilder>(
+                  (com.godme.protobuf.Message.Dog) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 3;
+        onChanged();;
+        return dogBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.godme.protobuf.Message.Pig, com.godme.protobuf.Message.Pig.Builder, com.godme.protobuf.Message.PigOrBuilder> pigBuilder_;
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public boolean hasPig() {
+        return dataBodyCase_ == 4;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public com.godme.protobuf.Message.Pig getPig() {
+        if (pigBuilder_ == null) {
+          if (dataBodyCase_ == 4) {
+            return (com.godme.protobuf.Message.Pig) dataBody_;
+          }
+          return com.godme.protobuf.Message.Pig.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 4) {
+            return pigBuilder_.getMessage();
+          }
+          return com.godme.protobuf.Message.Pig.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public Builder setPig(com.godme.protobuf.Message.Pig value) {
+        if (pigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          pigBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public Builder setPig(
+          com.godme.protobuf.Message.Pig.Builder builderForValue) {
+        if (pigBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          pigBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public Builder mergePig(com.godme.protobuf.Message.Pig value) {
+        if (pigBuilder_ == null) {
+          if (dataBodyCase_ == 4 &&
+              dataBody_ != com.godme.protobuf.Message.Pig.getDefaultInstance()) {
+            dataBody_ = com.godme.protobuf.Message.Pig.newBuilder((com.godme.protobuf.Message.Pig) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 4) {
+            pigBuilder_.mergeFrom(value);
+          }
+          pigBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public Builder clearPig() {
+        if (pigBuilder_ == null) {
+          if (dataBodyCase_ == 4) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 4) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          pigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public com.godme.protobuf.Message.Pig.Builder getPigBuilder() {
+        return getPigFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      public com.godme.protobuf.Message.PigOrBuilder getPigOrBuilder() {
+        if ((dataBodyCase_ == 4) && (pigBuilder_ != null)) {
+          return pigBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 4) {
+            return (com.godme.protobuf.Message.Pig) dataBody_;
+          }
+          return com.godme.protobuf.Message.Pig.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.godme.protobuf.Pig pig = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.godme.protobuf.Message.Pig, com.godme.protobuf.Message.Pig.Builder, com.godme.protobuf.Message.PigOrBuilder> 
+          getPigFieldBuilder() {
+        if (pigBuilder_ == null) {
+          if (!(dataBodyCase_ == 4)) {
+            dataBody_ = com.godme.protobuf.Message.Pig.getDefaultInstance();
+          }
+          pigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.godme.protobuf.Message.Pig, com.godme.protobuf.Message.Pig.Builder, com.godme.protobuf.Message.PigOrBuilder>(
+                  (com.godme.protobuf.Message.Pig) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 4;
+        onChanged();;
+        return pigBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.godme.protobuf.Animal)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.godme.protobuf.Animal)
+    private static final com.godme.protobuf.Message.Animal DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.godme.protobuf.Message.Animal();
+    }
+
+    public static com.godme.protobuf.Message.Animal getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Animal>
+        PARSER = new com.google.protobuf.AbstractParser<Animal>() {
+      @java.lang.Override
+      public Animal parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Animal(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Animal> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Animal> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.godme.protobuf.Message.Animal getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CatOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.godme.protobuf.Cat)
       com.google.protobuf.MessageOrBuilder {
@@ -927,11 +2272,1609 @@ public final class Message {
 
   }
 
+  public interface DogOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.godme.protobuf.Dog)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string hello = 2;</code>
+     */
+    boolean hasHello();
+    /**
+     * <code>optional string hello = 2;</code>
+     */
+    java.lang.String getHello();
+    /**
+     * <code>optional string hello = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getHelloBytes();
+  }
+  /**
+   * Protobuf type {@code com.godme.protobuf.Dog}
+   */
+  public  static final class Dog extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.godme.protobuf.Dog)
+      DogOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Dog.newBuilder() to construct.
+    private Dog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Dog() {
+      name_ = "";
+      hello_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Dog(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              hello_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Dog_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Dog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.godme.protobuf.Message.Dog.class, com.godme.protobuf.Message.Dog.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HELLO_FIELD_NUMBER = 2;
+    private volatile java.lang.Object hello_;
+    /**
+     * <code>optional string hello = 2;</code>
+     */
+    public boolean hasHello() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string hello = 2;</code>
+     */
+    public java.lang.String getHello() {
+      java.lang.Object ref = hello_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          hello_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string hello = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHelloBytes() {
+      java.lang.Object ref = hello_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hello_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hello_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hello_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.godme.protobuf.Message.Dog)) {
+        return super.equals(obj);
+      }
+      com.godme.protobuf.Message.Dog other = (com.godme.protobuf.Message.Dog) obj;
+
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasHello() == other.hasHello());
+      if (hasHello()) {
+        result = result && getHello()
+            .equals(other.getHello());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasHello()) {
+        hash = (37 * hash) + HELLO_FIELD_NUMBER;
+        hash = (53 * hash) + getHello().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Dog parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Dog parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Dog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.godme.protobuf.Message.Dog prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.godme.protobuf.Dog}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.godme.protobuf.Dog)
+        com.godme.protobuf.Message.DogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Dog_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Dog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.godme.protobuf.Message.Dog.class, com.godme.protobuf.Message.Dog.Builder.class);
+      }
+
+      // Construct using com.godme.protobuf.Message.Dog.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        hello_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Dog_descriptor;
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Dog getDefaultInstanceForType() {
+        return com.godme.protobuf.Message.Dog.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Dog build() {
+        com.godme.protobuf.Message.Dog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Dog buildPartial() {
+        com.godme.protobuf.Message.Dog result = new com.godme.protobuf.Message.Dog(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.hello_ = hello_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.godme.protobuf.Message.Dog) {
+          return mergeFrom((com.godme.protobuf.Message.Dog)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.godme.protobuf.Message.Dog other) {
+        if (other == com.godme.protobuf.Message.Dog.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasHello()) {
+          bitField0_ |= 0x00000002;
+          hello_ = other.hello_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.godme.protobuf.Message.Dog parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.godme.protobuf.Message.Dog) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hello_ = "";
+      /**
+       * <code>optional string hello = 2;</code>
+       */
+      public boolean hasHello() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string hello = 2;</code>
+       */
+      public java.lang.String getHello() {
+        java.lang.Object ref = hello_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            hello_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string hello = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHelloBytes() {
+        java.lang.Object ref = hello_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hello_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string hello = 2;</code>
+       */
+      public Builder setHello(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        hello_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string hello = 2;</code>
+       */
+      public Builder clearHello() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        hello_ = getDefaultInstance().getHello();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string hello = 2;</code>
+       */
+      public Builder setHelloBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        hello_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.godme.protobuf.Dog)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.godme.protobuf.Dog)
+    private static final com.godme.protobuf.Message.Dog DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.godme.protobuf.Message.Dog();
+    }
+
+    public static com.godme.protobuf.Message.Dog getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Dog>
+        PARSER = new com.google.protobuf.AbstractParser<Dog>() {
+      @java.lang.Override
+      public Dog parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Dog(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Dog> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Dog> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.godme.protobuf.Message.Dog getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.godme.protobuf.Pig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional int32 age = 2;</code>
+     */
+    boolean hasAge();
+    /**
+     * <code>optional int32 age = 2;</code>
+     */
+    int getAge();
+
+    /**
+     * <code>optional string gender = 3;</code>
+     */
+    boolean hasGender();
+    /**
+     * <code>optional string gender = 3;</code>
+     */
+    java.lang.String getGender();
+    /**
+     * <code>optional string gender = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getGenderBytes();
+  }
+  /**
+   * Protobuf type {@code com.godme.protobuf.Pig}
+   */
+  public  static final class Pig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.godme.protobuf.Pig)
+      PigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Pig.newBuilder() to construct.
+    private Pig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Pig() {
+      name_ = "";
+      age_ = 0;
+      gender_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Pig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              age_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              gender_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Pig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Pig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.godme.protobuf.Message.Pig.class, com.godme.protobuf.Message.Pig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AGE_FIELD_NUMBER = 2;
+    private int age_;
+    /**
+     * <code>optional int32 age = 2;</code>
+     */
+    public boolean hasAge() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 age = 2;</code>
+     */
+    public int getAge() {
+      return age_;
+    }
+
+    public static final int GENDER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object gender_;
+    /**
+     * <code>optional string gender = 3;</code>
+     */
+    public boolean hasGender() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string gender = 3;</code>
+     */
+    public java.lang.String getGender() {
+      java.lang.Object ref = gender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          gender_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string gender = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGenderBytes() {
+      java.lang.Object ref = gender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, age_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gender_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, age_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gender_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.godme.protobuf.Message.Pig)) {
+        return super.equals(obj);
+      }
+      com.godme.protobuf.Message.Pig other = (com.godme.protobuf.Message.Pig) obj;
+
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasAge() == other.hasAge());
+      if (hasAge()) {
+        result = result && (getAge()
+            == other.getAge());
+      }
+      result = result && (hasGender() == other.hasGender());
+      if (hasGender()) {
+        result = result && getGender()
+            .equals(other.getGender());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasAge()) {
+        hash = (37 * hash) + AGE_FIELD_NUMBER;
+        hash = (53 * hash) + getAge();
+      }
+      if (hasGender()) {
+        hash = (37 * hash) + GENDER_FIELD_NUMBER;
+        hash = (53 * hash) + getGender().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Pig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Pig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.godme.protobuf.Message.Pig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.godme.protobuf.Message.Pig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.godme.protobuf.Pig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.godme.protobuf.Pig)
+        com.godme.protobuf.Message.PigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Pig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Pig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.godme.protobuf.Message.Pig.class, com.godme.protobuf.Message.Pig.Builder.class);
+      }
+
+      // Construct using com.godme.protobuf.Message.Pig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        age_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gender_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.godme.protobuf.Message.internal_static_com_godme_protobuf_Pig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Pig getDefaultInstanceForType() {
+        return com.godme.protobuf.Message.Pig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Pig build() {
+        com.godme.protobuf.Message.Pig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.godme.protobuf.Message.Pig buildPartial() {
+        com.godme.protobuf.Message.Pig result = new com.godme.protobuf.Message.Pig(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.age_ = age_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.gender_ = gender_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.godme.protobuf.Message.Pig) {
+          return mergeFrom((com.godme.protobuf.Message.Pig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.godme.protobuf.Message.Pig other) {
+        if (other == com.godme.protobuf.Message.Pig.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasAge()) {
+          setAge(other.getAge());
+        }
+        if (other.hasGender()) {
+          bitField0_ |= 0x00000004;
+          gender_ = other.gender_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.godme.protobuf.Message.Pig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.godme.protobuf.Message.Pig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int age_ ;
+      /**
+       * <code>optional int32 age = 2;</code>
+       */
+      public boolean hasAge() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 age = 2;</code>
+       */
+      public int getAge() {
+        return age_;
+      }
+      /**
+       * <code>optional int32 age = 2;</code>
+       */
+      public Builder setAge(int value) {
+        bitField0_ |= 0x00000002;
+        age_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 age = 2;</code>
+       */
+      public Builder clearAge() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        age_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gender_ = "";
+      /**
+       * <code>optional string gender = 3;</code>
+       */
+      public boolean hasGender() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string gender = 3;</code>
+       */
+      public java.lang.String getGender() {
+        java.lang.Object ref = gender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            gender_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string gender = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGenderBytes() {
+        java.lang.Object ref = gender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string gender = 3;</code>
+       */
+      public Builder setGender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        gender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string gender = 3;</code>
+       */
+      public Builder clearGender() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        gender_ = getDefaultInstance().getGender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string gender = 3;</code>
+       */
+      public Builder setGenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        gender_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.godme.protobuf.Pig)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.godme.protobuf.Pig)
+    private static final com.godme.protobuf.Message.Pig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.godme.protobuf.Message.Pig();
+    }
+
+    public static com.godme.protobuf.Message.Pig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Pig>
+        PARSER = new com.google.protobuf.AbstractParser<Pig>() {
+      @java.lang.Override
+      public Pig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Pig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Pig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Pig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.godme.protobuf.Message.Pig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_godme_protobuf_Animal_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_godme_protobuf_Animal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_godme_protobuf_Cat_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_godme_protobuf_Cat_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_godme_protobuf_Dog_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_godme_protobuf_Dog_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_godme_protobuf_Pig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_godme_protobuf_Pig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -941,9 +3884,18 @@ public final class Message {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rMessage.proto\022\022com.godme.protobuf\"2\n\003C" +
-      "at\022\014\n\004name\030\001 \001(\t\022\r\n\005color\030\002 \001(\t\022\016\n\006gende" +
-      "r\030\003 \001(\tB\037\n\022com.godme.protobufB\007MessageH\001"
+      "\n\rMessage.proto\022\022com.godme.protobuf\"\363\001\n\006" +
+      "Animal\022;\n\013animal_type\030\001 \002(\0162&.com.godme." +
+      "protobuf.Animal.Animal_type\022&\n\003cat\030\002 \001(\013" +
+      "2\027.com.godme.protobuf.CatH\000\022&\n\003dog\030\003 \001(\013" +
+      "2\027.com.godme.protobuf.DogH\000\022&\n\003pig\030\004 \001(\013" +
+      "2\027.com.godme.protobuf.PigH\000\"(\n\013Animal_ty" +
+      "pe\022\007\n\003DOG\020\001\022\007\n\003CAT\020\002\022\007\n\003PIG\020\003B\n\n\010dataBod" +
+      "y\"2\n\003Cat\022\014\n\004name\030\001 \001(\t\022\r\n\005color\030\002 \001(\t\022\016\n" +
+      "\006gender\030\003 \001(\t\"\"\n\003Dog\022\014\n\004name\030\001 \001(\t\022\r\n\005he" +
+      "llo\030\002 \001(\t\"0\n\003Pig\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 " +
+      "\001(\005\022\016\n\006gender\030\003 \001(\tB\037\n\022com.godme.protobu" +
+      "fB\007MessageH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -957,12 +3909,30 @@ public final class Message {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_godme_protobuf_Cat_descriptor =
+    internal_static_com_godme_protobuf_Animal_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_godme_protobuf_Animal_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_godme_protobuf_Animal_descriptor,
+        new java.lang.String[] { "AnimalType", "Cat", "Dog", "Pig", "DataBody", });
+    internal_static_com_godme_protobuf_Cat_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_godme_protobuf_Cat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_godme_protobuf_Cat_descriptor,
         new java.lang.String[] { "Name", "Color", "Gender", });
+    internal_static_com_godme_protobuf_Dog_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_godme_protobuf_Dog_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_godme_protobuf_Dog_descriptor,
+        new java.lang.String[] { "Name", "Hello", });
+    internal_static_com_godme_protobuf_Pig_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_godme_protobuf_Pig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_godme_protobuf_Pig_descriptor,
+        new java.lang.String[] { "Name", "Age", "Gender", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

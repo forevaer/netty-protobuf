@@ -4,9 +4,30 @@ package com.godme.protobuf;
 option java_package = "com.godme.protobuf";
 option java_outer_classname = "Message";
 option optimize_for = SPEED;
-
+message Animal{
+    enum Animal_type{
+        DOG = 1;
+        CAT = 2;
+        PIG = 3;
+    }
+    required Animal_type animal_type = 1;
+    oneof dataBody{
+         Cat cat = 2;
+         Dog dog = 3;
+         Pig pig = 4;
+    }
+}
 message Cat{
     optional string name = 1;
     optional string color = 2;
+    optional string gender = 3;
+}
+message Dog{
+    optional string name = 1;
+    optional string hello = 2;
+}
+message Pig{
+    optional string name = 1;
+    optional int32 age = 2;
     optional string gender = 3;
 }

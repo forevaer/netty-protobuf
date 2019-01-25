@@ -17,11 +17,46 @@ public class ProtobufClientMain {
             Bootstrap bootstrap = new Bootstrap();
             Channel channel =  bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class).handler(new ProtobufClientInitializer()).connect("localhost",8989).sync().channel();
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            String [] attr = null;
             while(true){
-                show("add cat : name color gender");
-                String[] attr = reader.readLine().split(" ");
-                Message.Cat cat = Message.Cat.newBuilder().setName(attr[0]).setColor(attr[1]).setGender(attr[2]).build();
-                channel.writeAndFlush(cat);
+                Message.Animal.Builder animalBuilder = Message.Animal.newBuilder();
+                show(" choose animal :  dog ? pig ? cat ?");
+                String type = reader.readLine();
+                switch (type){
+                    case "pig":
+                        show("add pig : name age gender");
+                        attr = reader.readLine().split(" ");
+                        animalBuilder.setAnimalType(Message.Animal.Animal_type.PIG)
+                                .setPig(
+                                        Message.Pig.newBuilder()
+                                                .setName(attr[0])
+                                                .setAge(Integer.valueOf(attr[1]))
+                                                .setGender(attr[2])
+                                );
+                        break;
+                    case "dog":
+                        show("add dog : name hello");
+                        attr  = reader.readLine().split(" ");
+                        animalBuilder.setAnimalType(Message.Animal.Animal_type.DOG).setDog(
+                                Message.Dog.newBuilder()
+                                .setName(attr[0])
+                                .setHello(attr[1])
+                        );
+                        break;
+                    case "cat":
+                        show("add cat : name color gender");
+                        attr = reader.readLine().split(" ");
+                        animalBuilder.setAnimalType(Message.Animal.Animal_type.CAT)
+                                .setCat(
+                                        Message.Cat.newBuilder()
+                                        .setName(attr[0])
+                                        .setColor(attr[1])
+                                        .setGender(attr[3])
+                                );
+                        break;
+                        default:break;
+                }
+                channel.writeAndFlush(animalBuilder.build());
             }
         }finally {
             eventLoopGroup.shutdownGracefully();

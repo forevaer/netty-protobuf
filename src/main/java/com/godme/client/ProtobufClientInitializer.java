@@ -1,4 +1,4 @@
-package com.godme.com.godme.client;
+package com.godme.client;
 
 import com.godme.protobuf.Message;
 import io.netty.channel.ChannelInitializer;
@@ -17,6 +17,5 @@ public class ProtobufClientInitializer extends ChannelInitializer<SocketChannel>
         pipeline.addLast(new ProtobufDecoder(Message.Cat.getDefaultInstance()));
         pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
         pipeline.addLast(new ProtobufEncoder());
-        pipeline.addLast(new ProtobufClientHandler());
     }
 }

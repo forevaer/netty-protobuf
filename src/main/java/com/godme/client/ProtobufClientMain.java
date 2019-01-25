@@ -1,5 +1,5 @@
 
-package com.godme.com.godme.client;
+package com.godme.client;
 
 import com.godme.protobuf.Message;
 import io.netty.bootstrap.Bootstrap;
